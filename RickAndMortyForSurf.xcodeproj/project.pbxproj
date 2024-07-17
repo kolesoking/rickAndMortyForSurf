@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		63E82216F92D50E6D009518E /* Pods_RickAndMortyForSurf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD93D7EA59E549C3DB99E3A /* Pods_RickAndMortyForSurf.framework */; };
 		71F70BD52C47ED6900B86999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BD42C47ED6900B86999 /* AppDelegate.swift */; };
-		71F70BD72C47ED6900B86999 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BD62C47ED6900B86999 /* SceneDelegate.swift */; };
 		71F70BD92C47ED6900B86999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BD82C47ED6900B86999 /* ViewController.swift */; };
 		71F70BDE2C47ED6B00B86999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F70BDD2C47ED6B00B86999 /* Assets.xcassets */; };
 		71F70BE12C47ED6B00B86999 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 71F70BE02C47ED6B00B86999 /* Base */; };
 		71F70BF22C47EF4D00B86999 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BF12C47EF4D00B86999 /* CommonViewController.swift */; };
+		71F70BF62C47F15C00B86999 /* CommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BF52C47F15C00B86999 /* CommonView.swift */; };
+		71F70BF82C47F60500B86999 /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BF72C47F60500B86999 /* CharactersListView.swift */; };
+		71F70BFA2C47F68500B86999 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BF92C47F68500B86999 /* CharactersListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58B64D39D520C55D3106A99A /* Pods-RickAndMortyForSurf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyForSurf.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyForSurf/Pods-RickAndMortyForSurf.debug.xcconfig"; sourceTree = "<group>"; };
 		71F70BD12C47ED6900B86999 /* RickAndMortyForSurf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyForSurf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F70BD42C47ED6900B86999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71F70BD62C47ED6900B86999 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		71F70BD82C47ED6900B86999 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		71F70BDD2C47ED6B00B86999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71F70BE02C47ED6B00B86999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71F70BE22C47ED6B00B86999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71F70BF12C47EF4D00B86999 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
+		71F70BF52C47F15C00B86999 /* CommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
+		71F70BF72C47F60500B86999 /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
+		71F70BF92C47F68500B86999 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
 		93C5A75C265C5786FE5B9C23 /* Pods-RickAndMortyForSurf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyForSurf.release.xcconfig"; path = "Target Support Files/Pods-RickAndMortyForSurf/Pods-RickAndMortyForSurf.release.xcconfig"; sourceTree = "<group>"; };
 		DDD93D7EA59E549C3DB99E3A /* Pods_RickAndMortyForSurf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMortyForSurf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -48,7 +52,6 @@
 				58B64D39D520C55D3106A99A /* Pods-RickAndMortyForSurf.debug.xcconfig */,
 				93C5A75C265C5786FE5B9C23 /* Pods-RickAndMortyForSurf.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,7 +80,6 @@
 				71F70BEA2C47EEA000B86999 /* MainFlow */,
 				71F70BE92C47EE2400B86999 /* Appearence */,
 				71F70BD42C47ED6900B86999 /* AppDelegate.swift */,
-				71F70BD62C47ED6900B86999 /* SceneDelegate.swift */,
 				71F70BD82C47ED6900B86999 /* ViewController.swift */,
 			);
 			path = RickAndMortyForSurf;
@@ -115,6 +117,8 @@
 		71F70BEC2C47EEE300B86999 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71F70BF72C47F60500B86999 /* CharactersListView.swift */,
+				71F70BF92C47F68500B86999 /* CharactersListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				71F70BF12C47EF4D00B86999 /* CommonViewController.swift */,
+				71F70BF52C47F15C00B86999 /* CommonView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -271,9 +276,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F70BD92C47ED6900B86999 /* ViewController.swift in Sources */,
+				71F70BF82C47F60500B86999 /* CharactersListView.swift in Sources */,
+				71F70BFA2C47F68500B86999 /* CharactersListViewController.swift in Sources */,
 				71F70BF22C47EF4D00B86999 /* CommonViewController.swift in Sources */,
+				71F70BF62C47F15C00B86999 /* CommonView.swift in Sources */,
 				71F70BD52C47ED6900B86999 /* AppDelegate.swift in Sources */,
-				71F70BD72C47ED6900B86999 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +335,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -391,7 +398,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -420,11 +427,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3LNA9DKLNP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RickAndMortyForSurf/Info.plist;
+				INFOPLIST_FILE = RickAndMortyForSurf/Appearence/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,9 +440,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sergeykolesnikov.RickAndMortyForSurf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -448,11 +460,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3LNA9DKLNP;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RickAndMortyForSurf/Info.plist;
+				INFOPLIST_FILE = RickAndMortyForSurf/Appearence/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,9 +473,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sergeykolesnikov.RickAndMortyForSurf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
