@@ -6,6 +6,7 @@ target 'RickAndMortyForSurf' do
   use_frameworks!
 
   # Pods for RickAndMortyForSurf
+
   pod 'SnapKit', '~> 5.0.0'
 
 end
