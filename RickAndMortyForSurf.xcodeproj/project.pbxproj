@@ -17,6 +17,10 @@
 		71F70BFA2C47F68500B86999 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BF92C47F68500B86999 /* CharactersListViewController.swift */; };
 		71F70BFD2C47FC8A00B86999 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BFC2C47FC8A00B86999 /* NetworkService.swift */; };
 		71F70C042C48016D00B86999 /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C032C48016D00B86999 /* NetworkServiceImpl.swift */; };
+		71F70C092C48732200B86999 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C082C48732200B86999 /* CharacterModel.swift */; };
+		71F70C0B2C4875E300B86999 /* CharactersWithInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C0A2C4875E300B86999 /* CharactersWithInfoModel.swift */; };
+		71F70C0D2C4877CE00B86999 /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C0C2C4877CE00B86999 /* CharactersListViewModel.swift */; };
+		71F70C0F2C48786200B86999 /* CharactersListDefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C0E2C48786200B86999 /* CharactersListDefaultViewModel.swift */; };
 		D98AA64C9B302292E6964350 /* Pods_RickAndMortyForSurf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B2CDD9D0B81EA503D65C3D /* Pods_RickAndMortyForSurf.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +40,10 @@
 		71F70BF92C47F68500B86999 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
 		71F70BFC2C47FC8A00B86999 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		71F70C032C48016D00B86999 /* NetworkServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImpl.swift; sourceTree = "<group>"; };
+		71F70C082C48732200B86999 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		71F70C0A2C4875E300B86999 /* CharactersWithInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersWithInfoModel.swift; sourceTree = "<group>"; };
+		71F70C0C2C4877CE00B86999 /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
+		71F70C0E2C48786200B86999 /* CharactersListDefaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListDefaultViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 		71F70BEC2C47EEE300B86999 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71F70C072C48730600B86999 /* Models */,
 				71F70BF72C47F60500B86999 /* CharactersListView.swift */,
 				71F70BF92C47F68500B86999 /* CharactersListViewController.swift */,
 			);
@@ -131,6 +140,8 @@
 		71F70BED2C47EEED00B86999 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				71F70C0C2C4877CE00B86999 /* CharactersListViewModel.swift */,
+				71F70C0E2C48786200B86999 /* CharactersListDefaultViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -165,6 +176,15 @@
 				71F70C032C48016D00B86999 /* NetworkServiceImpl.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		71F70C072C48730600B86999 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				71F70C082C48732200B86999 /* CharacterModel.swift */,
+				71F70C0A2C4875E300B86999 /* CharactersWithInfoModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BB1F2DF7134CB85FDF233708 /* Frameworks */ = {
@@ -289,12 +309,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F70C0F2C48786200B86999 /* CharactersListDefaultViewModel.swift in Sources */,
 				71F70BD92C47ED6900B86999 /* ViewController.swift in Sources */,
 				71F70BF82C47F60500B86999 /* CharactersListView.swift in Sources */,
 				71F70BFA2C47F68500B86999 /* CharactersListViewController.swift in Sources */,
 				71F70BF22C47EF4D00B86999 /* CommonViewController.swift in Sources */,
 				71F70BF62C47F15C00B86999 /* CommonView.swift in Sources */,
+				71F70C0B2C4875E300B86999 /* CharactersWithInfoModel.swift in Sources */,
 				71F70BD52C47ED6900B86999 /* AppDelegate.swift in Sources */,
+				71F70C092C48732200B86999 /* CharacterModel.swift in Sources */,
+				71F70C0D2C4877CE00B86999 /* CharactersListViewModel.swift in Sources */,
 				71F70BFD2C47FC8A00B86999 /* NetworkService.swift in Sources */,
 				71F70C042C48016D00B86999 /* NetworkServiceImpl.swift in Sources */,
 			);
