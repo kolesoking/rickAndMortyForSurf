@@ -15,15 +15,14 @@ final class CharactersListViewController: CommonViewController<CharactersListVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .black
         viewModel.viewDidLoad()
         configureBindings()
     }
     
     func configureBindings() {
         bind(viewModel.charactersModel) { [weak self] model in
-            print("model: \(model)")
-            self?.contentView.updateUI(with: model[2].image)
+            self?.contentView.updateUI(with: model)
         }
     }
 }

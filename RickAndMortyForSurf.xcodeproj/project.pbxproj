@@ -22,6 +22,9 @@
 		71F70C0D2C4877CE00B86999 /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C0C2C4877CE00B86999 /* CharactersListViewModel.swift */; };
 		71F70C0F2C48786200B86999 /* CharactersListDefaultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C0E2C48786200B86999 /* CharactersListDefaultViewModel.swift */; };
 		71F70C172C488B3500B86999 /* UIImageView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C162C488B3500B86999 /* UIImageView +.swift */; };
+		71F70C1A2C494A2D00B86999 /* CharactersListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C192C494A2D00B86999 /* CharactersListAdapter.swift */; };
+		71F70C1D2C494B9800B86999 /* CharacterCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C1C2C494B9800B86999 /* CharacterCellModel.swift */; };
+		71F70C202C494ECF00B86999 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C1F2C494ECF00B86999 /* CharacterCell.swift */; };
 		D98AA64C9B302292E6964350 /* Pods_RickAndMortyForSurf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B2CDD9D0B81EA503D65C3D /* Pods_RickAndMortyForSurf.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		71F70C0C2C4877CE00B86999 /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		71F70C0E2C48786200B86999 /* CharactersListDefaultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListDefaultViewModel.swift; sourceTree = "<group>"; };
 		71F70C162C488B3500B86999 /* UIImageView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView +.swift"; sourceTree = "<group>"; };
+		71F70C192C494A2D00B86999 /* CharactersListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListAdapter.swift; sourceTree = "<group>"; };
+		71F70C1C2C494B9800B86999 /* CharacterCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellModel.swift; sourceTree = "<group>"; };
+		71F70C1F2C494ECF00B86999 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,8 @@
 		71F70BEC2C47EEE300B86999 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71F70C1E2C494EBC00B86999 /* Components */,
+				71F70C182C494A0200B86999 /* Adatpters */,
 				71F70C072C48730600B86999 /* Models */,
 				71F70BF72C47F60500B86999 /* CharactersListView.swift */,
 				71F70BF92C47F68500B86999 /* CharactersListViewController.swift */,
@@ -186,6 +194,7 @@
 			children = (
 				71F70C082C48732200B86999 /* CharacterModel.swift */,
 				71F70C0A2C4875E300B86999 /* CharactersWithInfoModel.swift */,
+				71F70C1C2C494B9800B86999 /* CharacterCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +205,22 @@
 				71F70C162C488B3500B86999 /* UIImageView +.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		71F70C182C494A0200B86999 /* Adatpters */ = {
+			isa = PBXGroup;
+			children = (
+				71F70C192C494A2D00B86999 /* CharactersListAdapter.swift */,
+			);
+			path = Adatpters;
+			sourceTree = "<group>";
+		};
+		71F70C1E2C494EBC00B86999 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				71F70C1F2C494ECF00B86999 /* CharacterCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		BB1F2DF7134CB85FDF233708 /* Frameworks */ = {
@@ -323,12 +348,15 @@
 				71F70C0F2C48786200B86999 /* CharactersListDefaultViewModel.swift in Sources */,
 				71F70BD92C47ED6900B86999 /* ViewController.swift in Sources */,
 				71F70C172C488B3500B86999 /* UIImageView +.swift in Sources */,
+				71F70C1D2C494B9800B86999 /* CharacterCellModel.swift in Sources */,
 				71F70BF82C47F60500B86999 /* CharactersListView.swift in Sources */,
 				71F70BFA2C47F68500B86999 /* CharactersListViewController.swift in Sources */,
 				71F70BF22C47EF4D00B86999 /* CommonViewController.swift in Sources */,
 				71F70BF62C47F15C00B86999 /* CommonView.swift in Sources */,
 				71F70C0B2C4875E300B86999 /* CharactersWithInfoModel.swift in Sources */,
 				71F70BD52C47ED6900B86999 /* AppDelegate.swift in Sources */,
+				71F70C1A2C494A2D00B86999 /* CharactersListAdapter.swift in Sources */,
+				71F70C202C494ECF00B86999 /* CharacterCell.swift in Sources */,
 				71F70C092C48732200B86999 /* CharacterModel.swift in Sources */,
 				71F70C0D2C4877CE00B86999 /* CharactersListViewModel.swift in Sources */,
 				71F70BFD2C47FC8A00B86999 /* NetworkService.swift in Sources */,

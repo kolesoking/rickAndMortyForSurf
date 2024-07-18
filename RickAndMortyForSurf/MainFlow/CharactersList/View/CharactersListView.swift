@@ -1,45 +1,52 @@
 import SnapKit
 
 final class CharactersListView: CommonView {
-    private let label = UILabel()
-    private let imageView = UIImageView()
     
-    override func setupUI() {
-//        setupLabel()
-        setupImage()
+    private let collectionFlowLayout = UICollectionViewFlowLayout()
+    private let dataSourse: CharactersListAdapter
+    private let collectionView: UICollectionView
+    
+    override init(frame: CGRect) {
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionFlowLayout)
+        dataSourse = CharactersListAdapter(collectionView: collectionView)
+        super.init(frame: frame)
+        setupUI()
     }
     
-    func updateUI(with url: String) {
-        updateImage(with: url)
+    override func setupUI() {
+        setupCollectionView()
+    }
+    
+    func updateUI(with model: CharactersWithSectionModel ) {
+        dataSourse.update(with: model)
     }
 }
 
 // MARK: - Private extension -
 private extension CharactersListView {
-    func setupLabel() {
-        label.text = "Hello World"
+    func setupCollectionView() {
+        collectionView.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.register(CharacterCell.self, forCellWithReuseIdentifier: "\(CharacterCell.self)")
+        collectionFlowLayout.minimumLineSpacing = 4
+        collectionFlowLayout.scrollDirection = .vertical
         
-        addSubview(label)
-        label.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
+        let screenWidth = UIScreen.main.bounds.width
+        collectionFlowLayout.itemSize = CGSize(width: screenWidth - 40, height: 96)
+        
+        addSubview(collectionView)
+        collectionView.snp.makeConstraints {
+//            $0.edges.equalToSuperview()
+            $0.left.right.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
         }
     }
-    
-    func setupImage() {
-        addSubview(imageView)
-        imageView.snp.makeConstraints {
-            $0.centerX.centerY.equalToSuperview()
-            $0.size.equalTo(100)
-        }
-    }
-    
-    func updateImage(with url: String) {
-        imageView.loadImage(with: url) { [weak self] image in
-            guard let image else {
-                print("error: lol")
-                return
-            }
-            self?.imageView.image = image
-        }
+}
+
+extension CharactersListView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("taatap")
     }
 }

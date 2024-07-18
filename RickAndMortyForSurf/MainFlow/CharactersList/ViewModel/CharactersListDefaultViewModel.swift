@@ -4,7 +4,7 @@ import Combine
 final class CharactersListDefaultViewModel {
     private let networkService: NetworkService
     
-    private var charactersModelSubject = PassthroughSubject<[CharacterModel], Never>()
+    private var charactersModelSubject = PassthroughSubject<CharactersWithSectionModel, Never>()
     
     private let endPoint = "character/"
     
@@ -37,7 +37,7 @@ final class CharactersListDefaultViewModel {
 
 // MARK: - CharactersListViewModel-
 extension CharactersListDefaultViewModel: CharactersListViewModel {
-    var charactersModel: AnyPublisher<[CharacterModel], Never> {
+    var charactersModel: AnyPublisher<CharactersWithSectionModel, Never> {
         charactersModelSubject.eraseToAnyPublisher()
     }
     
@@ -67,9 +67,39 @@ private extension CharactersListDefaultViewModel {
         do {
             let charactersWithInfoModel = try networkService.decodeJSONData(data: data) as CharactersWithInfoModel
             charactersListModel = charactersWithInfoModel.results
-            charactersModelSubject.send(charactersListModel)
+            createCharactersWithSectionModel(with: charactersListModel)
         } catch {
             print("error: \(error.localizedDescription)")
+        }
+    }
+    
+    func createCharactersWithSectionModel(with model: [CharacterModel]) {
+        let charactersCellModel = model.compactMap { charactersModel in
+            CharacterCellModel(
+                image: charactersModel.image,
+                name: charactersModel.name,
+                status: setStatus(with: charactersModel.status),
+                species: charactersModel.species,
+                gender: charactersModel.gender,
+                episodes: charactersModel.episode,
+                lastLocation: charactersModel.location.name
+            )
+        }
+        let charactersWithSectionModel = CharactersWithSectionModel(
+            section: .mane,
+            characters: charactersCellModel
+        )
+        
+        charactersModelSubject.send(charactersWithSectionModel)
+    }
+    
+    func setStatus(with text: String) -> LifeStatus {
+        if text == "Alive" {
+            return .alive
+        } else if text == "Dead" {
+            return .dead
+        } else {
+            return .uknown
         }
     }
 }

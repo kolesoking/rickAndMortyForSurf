@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 protocol CharactersListViewModel {
-    var charactersModel: AnyPublisher<[CharacterModel], Never> { get }
+    var charactersModel: AnyPublisher<CharactersWithSectionModel, Never> { get }
     
     func viewDidLoad()
     func getCharactersModel() async throws
