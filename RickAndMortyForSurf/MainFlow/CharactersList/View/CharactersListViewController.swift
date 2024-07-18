@@ -17,12 +17,24 @@ final class CharactersListViewController: CommonViewController<CharactersListVie
         super.viewDidLoad()
         view.backgroundColor = .black
         viewModel.viewDidLoad()
+        setupActions()
         configureBindings()
+    }
+    
+    func setupActions() {
+        contentView.setupAction { [weak self] index in
+            self?.viewModel.getCharacterModel(with: index)
+        }
     }
     
     func configureBindings() {
         bind(viewModel.charactersModel) { [weak self] model in
             self?.contentView.updateUI(with: model)
+        }
+        
+        bind(viewModel.characterModel) { [weak self] characterModel in
+            print("ok")
+            self?.navigationController?.pushViewController(CharacterViewController(characterCellModel: characterModel), animated: true)
         }
     }
 }

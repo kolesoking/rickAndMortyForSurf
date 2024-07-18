@@ -25,6 +25,9 @@
 		71F70C1A2C494A2D00B86999 /* CharactersListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C192C494A2D00B86999 /* CharactersListAdapter.swift */; };
 		71F70C1D2C494B9800B86999 /* CharacterCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C1C2C494B9800B86999 /* CharacterCellModel.swift */; };
 		71F70C202C494ECF00B86999 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C1F2C494ECF00B86999 /* CharacterCell.swift */; };
+		71F70C2B2C49767200B86999 /* CharactersListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C2A2C49767200B86999 /* CharactersListBuilder.swift */; };
+		71F70C2E2C4979B000B86999 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C2D2C4979B000B86999 /* CharacterViewController.swift */; };
+		71F70C302C4979D200B86999 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70C2F2C4979D200B86999 /* CharacterView.swift */; };
 		D98AA64C9B302292E6964350 /* Pods_RickAndMortyForSurf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60B2CDD9D0B81EA503D65C3D /* Pods_RickAndMortyForSurf.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		71F70C192C494A2D00B86999 /* CharactersListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListAdapter.swift; sourceTree = "<group>"; };
 		71F70C1C2C494B9800B86999 /* CharacterCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellModel.swift; sourceTree = "<group>"; };
 		71F70C1F2C494ECF00B86999 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		71F70C2A2C49767200B86999 /* CharactersListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListBuilder.swift; sourceTree = "<group>"; };
+		71F70C2D2C4979B000B86999 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		71F70C2F2C4979D200B86999 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +134,8 @@
 		71F70BEB2C47EEAC00B86999 /* CharactersList */ = {
 			isa = PBXGroup;
 			children = (
+				71F70C212C49712900B86999 /* Screens */,
 				71F70BEF2C47EF3500B86999 /* Assembly */,
-				71F70BEE2C47EEF300B86999 /* Router */,
 				71F70BED2C47EEED00B86999 /* ViewModel */,
 				71F70BEC2C47EEE300B86999 /* View */,
 			);
@@ -157,16 +163,10 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		71F70BEE2C47EEF300B86999 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		71F70BEF2C47EF3500B86999 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				71F70C2A2C49767200B86999 /* CharactersListBuilder.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -221,6 +221,31 @@
 				71F70C1F2C494ECF00B86999 /* CharacterCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		71F70C212C49712900B86999 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				71F70C2C2C49798F00B86999 /* Character */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		71F70C222C49714600B86999 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71F70C2F2C4979D200B86999 /* CharacterView.swift */,
+				71F70C2D2C4979B000B86999 /* CharacterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71F70C2C2C49798F00B86999 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				71F70C222C49714600B86999 /* View */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 		BB1F2DF7134CB85FDF233708 /* Frameworks */ = {
@@ -349,9 +374,12 @@
 				71F70BD92C47ED6900B86999 /* ViewController.swift in Sources */,
 				71F70C172C488B3500B86999 /* UIImageView +.swift in Sources */,
 				71F70C1D2C494B9800B86999 /* CharacterCellModel.swift in Sources */,
+				71F70C302C4979D200B86999 /* CharacterView.swift in Sources */,
 				71F70BF82C47F60500B86999 /* CharactersListView.swift in Sources */,
+				71F70C2B2C49767200B86999 /* CharactersListBuilder.swift in Sources */,
 				71F70BFA2C47F68500B86999 /* CharactersListViewController.swift in Sources */,
 				71F70BF22C47EF4D00B86999 /* CommonViewController.swift in Sources */,
+				71F70C2E2C4979B000B86999 /* CharacterViewController.swift in Sources */,
 				71F70BF62C47F15C00B86999 /* CommonView.swift in Sources */,
 				71F70C0B2C4875E300B86999 /* CharactersWithInfoModel.swift in Sources */,
 				71F70BD52C47ED6900B86999 /* AppDelegate.swift in Sources */,

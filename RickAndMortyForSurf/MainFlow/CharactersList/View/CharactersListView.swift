@@ -6,6 +6,8 @@ final class CharactersListView: CommonView {
     private let dataSourse: CharactersListAdapter
     private let collectionView: UICollectionView
     
+    private var action: ((Int) -> Void)?
+    
     override init(frame: CGRect) {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionFlowLayout)
         dataSourse = CharactersListAdapter(collectionView: collectionView)
@@ -19,6 +21,13 @@ final class CharactersListView: CommonView {
     
     func updateUI(with model: CharactersWithSectionModel ) {
         dataSourse.update(with: model)
+    }
+}
+
+// MARK: - Setup Actions -
+extension CharactersListView {
+    func setupAction(_ action: @escaping ((Int) -> Void)) {
+        self.action = action
     }
 }
 
@@ -38,7 +47,6 @@ private extension CharactersListView {
         
         addSubview(collectionView)
         collectionView.snp.makeConstraints {
-//            $0.edges.equalToSuperview()
             $0.left.right.equalToSuperview()
             $0.top.bottom.equalToSuperview()
         }
@@ -47,6 +55,6 @@ private extension CharactersListView {
 
 extension CharactersListView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("taatap")
+        action?(indexPath.row)
     }
 }

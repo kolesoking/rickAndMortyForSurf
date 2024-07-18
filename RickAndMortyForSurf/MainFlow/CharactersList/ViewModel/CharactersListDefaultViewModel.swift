@@ -5,6 +5,7 @@ final class CharactersListDefaultViewModel {
     private let networkService: NetworkService
     
     private var charactersModelSubject = PassthroughSubject<CharactersWithSectionModel, Never>()
+    private var characterModelSubject = PassthroughSubject<CharacterCellModel, Never>()
     
     private let endPoint = "character/"
     
@@ -30,6 +31,21 @@ final class CharactersListDefaultViewModel {
             created: "")
     ]
     
+    private var charactersWithSectionModel = CharactersWithSectionModel(
+        section: .mane,
+        characters: [
+            CharacterCellModel(
+                image: "",
+                name: "",
+                status: .uknown,
+                species: "",
+                gender: "",
+                episodes: [""],
+                lastLocation: ""
+            )
+        ]
+    )
+    
     init(networkService: NetworkService) {
         self.networkService = networkService
     }
@@ -41,12 +57,21 @@ extension CharactersListDefaultViewModel: CharactersListViewModel {
         charactersModelSubject.eraseToAnyPublisher()
     }
     
+    var characterModel: AnyPublisher<CharacterCellModel, Never> {
+        characterModelSubject.eraseToAnyPublisher()
+    }
+    
     func viewDidLoad() {
         requestCharacters()
     }
     
     func getCharactersModel() async throws {
         
+    }
+    
+    func getCharacterModel(with index: Int) {
+        let characterCellModel = charactersWithSectionModel.characters[index]
+        characterModelSubject.send(characterCellModel)
     }
 }
 
@@ -85,7 +110,7 @@ private extension CharactersListDefaultViewModel {
                 lastLocation: charactersModel.location.name
             )
         }
-        let charactersWithSectionModel = CharactersWithSectionModel(
+        charactersWithSectionModel = CharactersWithSectionModel(
             section: .mane,
             characters: charactersCellModel
         )
