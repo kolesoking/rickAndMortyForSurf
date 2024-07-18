@@ -149,32 +149,13 @@ private extension CharacterCell {
     }
     
     func updateLifeStatus(with status: LifeStatus) {
-        var text = ""
         switch status {
         case .alive:
-            lifeStatusLabel.textColor = UIColor(
-                red: 0x25/255,
-                green: 0x135/255,
-                blue: 0x55/255,
-                alpha: 1
-            )
-            text = status.rawValue
+            lifeStatusLabel.textColor = UIColor(named: "myGreen")
         case .dead:
-            lifeStatusLabel.textColor = UIColor(
-                red: 0x214/255,
-                green: 0x35/255,
-                blue: 0x0/255,
-                alpha: 1
-            )
-            text = status.rawValue
+            lifeStatusLabel.textColor = UIColor(named: "myRed")
         case .uknown:
-            lifeStatusLabel.textColor = UIColor(
-                red: 0x104/255,
-                green: 0x104/255,
-                blue: 0x116/255,
-                alpha: 1
-            )
-            text = status.rawValue
+            lifeStatusLabel.textColor = UIColor(named: "myGray")
         }
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -182,7 +163,7 @@ private extension CharacterCell {
         paragraphStyle.minimumLineHeight = 16
         paragraphStyle.maximumLineHeight = 16
         let attributes = NSAttributedString(
-            string: text,
+            string: status.rawValue,
             attributes: [
                 .font: UIFont.systemFont(ofSize: 12, weight: .bold),
                 .paragraphStyle: paragraphStyle

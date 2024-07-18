@@ -14,7 +14,6 @@ final class CharacterViewController: CommonViewController<CharacterView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         print(characterCellModel)
     }
 }
