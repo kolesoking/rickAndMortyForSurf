@@ -6,7 +6,7 @@ open class CommonViewController<View: CommonView>: UIViewController {
     public let contentView: View
     public var cancellableSet = Set<AnyCancellable>()
     
-    open var isNavBarHidden: Bool { false }
+    open var isNavBarHidden: Bool { true }
     
     public init() {
         contentView = View()

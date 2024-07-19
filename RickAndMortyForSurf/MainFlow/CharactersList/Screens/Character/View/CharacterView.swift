@@ -1,6 +1,7 @@
 import SnapKit
 
 final class CharacterView: CommonView {
+    private let headerView = HeaderView()
     private let containerView = UIView()
     
     private let imageView = UIImageView()
@@ -15,6 +16,7 @@ final class CharacterView: CommonView {
     
     override func setupUI() {
         backgroundColor = .black
+        setupHeadeView()
         setupContainerView()
         setupImageView()
         
@@ -25,18 +27,36 @@ final class CharacterView: CommonView {
         setupGenderLabel()
         setupEpisodesLabel()
         setupLastLocationLabel()
-        
-        updateImageView(with: "https://rickandmortyapi.com/api/character/avatar/3.jpeg")
-        updateLifeStatusView(with: .alive)
-        updateSpeciesLabel(with: "Human")
-        updateGenderLabel(with: "Male")
-        updateEpisodesLabel(with: "6,1 ,3,6 ,1,3 ,6,1,3, 6,1,3,6 ,1 ,3,6,1,3,6 ,1,3 ,6,1, 3,6,1,3,6, 1,3, 6,1,3,6,1,3, 6,1,3,6,1 ,3,6,1,3,6,1,3,6, 1,3 ,6,1,3,6,1, 3,6, 1,3,6,1,3,6 ,1,3,6,1,3,")
-        updateLastLocationLabel(with: "Earth")
+    }
+    
+    func updateUI(with model: CharacterCellModel) {
+        headerView.updateUI(with: model.name)
+        updateImageView(with: model.image)
+        updateLifeStatusView(with: model.status)
+        updateSpeciesLabel(with: model.species)
+        updateGenderLabel(with: model.gender)
+        updateEpisodesLabel(with: model.episodes[0])
+        updateLastLocationLabel(with: model.lastLocation)
+    }
+}
+
+// MARK: - Setup Actions -
+extension CharacterView {
+    func setupGoBackAction(_ action: @escaping (() -> Void)) {
+        headerView.setupGoBackAction(action)
     }
 }
 
 // MARK: - Private Extension -
 private extension CharacterView {
+    func setupHeadeView() {
+        addSubview(headerView)
+        headerView.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.top.equalTo(safeAreaLayoutGuide.snp.top)
+        }
+    }
+    
     func setupContainerView() {
         containerView.backgroundColor = UIColor(
             red: 0x15/255,
@@ -49,7 +69,7 @@ private extension CharacterView {
         addSubview(containerView)
         containerView.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(20)
-            $0.top.equalTo(safeAreaLayoutGuide.snp.top).offset(16)
+            $0.top.equalTo(headerView.snp.bottom).offset(8)
         }
     }
     
@@ -124,6 +144,8 @@ private extension CharacterView {
     
     func setupLastLocationLabel() {
         lastLocationLabel.textColor = .white
+        lastLocationLabel.numberOfLines = 0
+        lastLocationLabel.lineBreakMode = .byWordWrapping
         
         containerView.addSubview(lastLocationLabel)
         lastLocationLabel.snp.makeConstraints {

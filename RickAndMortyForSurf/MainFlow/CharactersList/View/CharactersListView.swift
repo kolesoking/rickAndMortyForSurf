@@ -1,6 +1,7 @@
 import SnapKit
 
 final class CharactersListView: CommonView {
+    private let headerView = HeaderView()
     
     private let collectionFlowLayout = UICollectionViewFlowLayout()
     private let dataSourse: CharactersListAdapter
@@ -16,6 +17,7 @@ final class CharactersListView: CommonView {
     }
     
     override func setupUI() {
+        setupHeaderView()
         setupCollectionView()
     }
     
@@ -33,6 +35,16 @@ extension CharactersListView {
 
 // MARK: - Private extension -
 private extension CharactersListView {
+    func setupHeaderView() {
+        headerView.updateUI(with: "Rick & Morty Characters")
+        headerView.isHiddenButton(true)
+        
+        addSubview(headerView)
+        headerView.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.top.equalTo(safeAreaLayoutGuide.snp.top)
+        }
+    }
     func setupCollectionView() {
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
@@ -48,7 +60,8 @@ private extension CharactersListView {
         addSubview(collectionView)
         collectionView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
-            $0.top.bottom.equalToSuperview()
+            $0.top.equalTo(headerView.snp.bottom).offset(8)
+            $0.bottom.equalToSuperview()
         }
     }
 }

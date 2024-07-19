@@ -3,9 +3,9 @@ import SnapKit
 final class CharacterViewController: CommonViewController<CharacterView> {
     private let characterCellModel: CharacterCellModel
     
-    override var isNavBarHidden: Bool {
-        return false
-    }
+//    override var isNavBarHidden: Bool {
+//        return true
+//    }
     
     init(characterCellModel: CharacterCellModel) {
         self.characterCellModel = characterCellModel
@@ -14,6 +14,13 @@ final class CharacterViewController: CommonViewController<CharacterView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(characterCellModel)
+        contentView.updateUI(with: characterCellModel)
+        setupActions()
+    }
+    
+    func setupActions() {
+        contentView.setupGoBackAction { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
 }
