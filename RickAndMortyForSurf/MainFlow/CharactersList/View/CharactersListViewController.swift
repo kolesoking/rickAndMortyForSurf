@@ -37,7 +37,6 @@ final class CharactersListViewController: CommonViewController<CharactersListVie
         }
         
         bind(viewModel.characterModel) { [weak self] characterModel in
-            print("ok")
             self?.navigationController?.pushViewController(CharacterViewController(characterCellModel: characterModel), animated: true)
         }
     }

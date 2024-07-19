@@ -35,7 +35,7 @@ final class CharacterView: CommonView {
         updateLifeStatusView(with: model.status)
         updateSpeciesLabel(with: model.species)
         updateGenderLabel(with: model.gender)
-        updateEpisodesLabel(with: model.episodes[0])
+        updateEpisodesLabel(with: model.episodes)
         updateLastLocationLabel(with: model.lastLocation)
     }
 }
@@ -182,7 +182,8 @@ private extension CharacterView {
         updateLabel(genderLabel, with: "Gender: ", and: text)
     }
     
-    func updateEpisodesLabel(with text: String) {
+    func updateEpisodesLabel(with episodes: [String]) {
+        let text = episodes.joined(separator: ", ")
         updateLabel(episodesLabel, with: "Episodes: ", and: text)
     }
     

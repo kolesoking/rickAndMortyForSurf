@@ -80,7 +80,7 @@ extension CharactersListDefaultViewModel: CharactersListViewModel {
     }
     
     func getCharacterModel(with index: Int) {
-        let characterCellModel = charactersWithSectionModel.characters[index]
+        let characterCellModel = getCharacterModel(for: index)
         characterModelSubject.send(characterCellModel)
     }
     
@@ -168,6 +168,17 @@ private extension CharactersListDefaultViewModel {
         } catch {
             print("error: \(error.localizedDescription)")
         }
+    }
+    
+    func getCharacterModel(for index: Int) -> CharacterCellModel {
+        var characterModel = charactersWithSectionModel.characters[index]
+        characterModel.episodes = filtredEpisodes(with: characterModel.episodes)
+        return characterModel
+    }
+    
+    func filtredEpisodes(with episodesURL: [String]) -> [String] {
+        let episodes = episodesModel.filter { episodesURL.contains($0.url) }
+        return episodes.map { $0.name }
     }
     
     func createCharactersWithSectionModel(with model: [CharacterModel]) {

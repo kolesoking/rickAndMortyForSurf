@@ -11,7 +11,7 @@ struct CharacterCellModel: Hashable {
     let status: LifeStatus
     let species: String
     let gender: String
-    let episodes: [String]
+    var episodes: [String]
     let lastLocation: String
 }
 
