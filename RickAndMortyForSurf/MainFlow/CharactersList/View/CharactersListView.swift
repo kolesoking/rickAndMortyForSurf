@@ -2,6 +2,7 @@ import SnapKit
 
 final class CharactersListView: CommonView {
     private let headerView = HeaderView()
+    private let searchView = SearchView()
     
     private let collectionFlowLayout = UICollectionViewFlowLayout()
     private let dataSourse: CharactersListAdapter
@@ -24,6 +25,7 @@ final class CharactersListView: CommonView {
     
     override func setupUI() {
         setupHeaderView()
+        setupSearchView()
         setupCollectionView()
         setupActivityIndicator()
     }
@@ -59,6 +61,16 @@ private extension CharactersListView {
             $0.top.equalTo(safeAreaLayoutGuide.snp.top)
         }
     }
+    
+    func setupSearchView() {
+        addSubview(searchView)
+        searchView.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(20)
+            $0.top.equalTo(headerView.snp.bottom).inset(8)
+            $0.height.equalTo(40)
+        }
+    }
+    
     func setupCollectionView() {
         collectionView.backgroundColor = .clear
         collectionView.delegate = self
@@ -74,7 +86,7 @@ private extension CharactersListView {
         addSubview(collectionView)
         collectionView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
-            $0.top.equalTo(headerView.snp.bottom).offset(8)
+            $0.top.equalTo(searchView.snp.bottom).offset(8)
             $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
     }
@@ -93,7 +105,7 @@ private extension CharactersListView {
     func updateCollectionViewContraintsForActivityIndicator() {
         collectionView.snp.remakeConstraints {
             $0.left.right.equalToSuperview()
-            $0.top.equalTo(headerView.snp.bottom).offset(8)
+            $0.top.equalTo(searchView.snp.bottom).offset(8)
             $0.bottom.equalTo(activityIndicator.snp.top).offset(-20)
         }
     }
@@ -101,7 +113,7 @@ private extension CharactersListView {
     func updateCollectionViewConstreinstForSafeArea() {
         collectionView.snp.remakeConstraints {
             $0.left.right.equalToSuperview()
-            $0.top.equalTo(headerView.snp.bottom).offset(8)
+            $0.top.equalTo(searchView.snp.bottom).offset(8)
             $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
     }
