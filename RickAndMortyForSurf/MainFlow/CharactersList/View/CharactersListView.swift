@@ -122,6 +122,7 @@ private extension CharactersListView {
 extension CharactersListView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         action?(indexPath.row)
+        searchView.hideKeyboard()
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

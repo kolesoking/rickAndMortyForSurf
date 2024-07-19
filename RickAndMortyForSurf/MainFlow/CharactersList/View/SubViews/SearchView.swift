@@ -15,6 +15,10 @@ final class SearchView: CommonView {
         setupSearchImageView()
         setupSearchTextField()
     }
+    
+    func hideKeyboard() {
+        searchTextField.resignFirstResponder()
+    }
 }
 
 // MARK: - Setup Actions -
@@ -86,6 +90,7 @@ private extension SearchView {
     
     @objc func tupFiltersButton() {
         print(#function)
+        searchTextField.resignFirstResponder()
     }
 }
 
