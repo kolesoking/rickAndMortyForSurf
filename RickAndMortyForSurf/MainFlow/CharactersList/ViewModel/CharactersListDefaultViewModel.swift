@@ -8,6 +8,7 @@ final class CharactersListDefaultViewModel {
     private var characterModelSubject = PassthroughSubject<CharacterCellModel, Never>()
     
     private let endPoint = "character/"
+    private var nextPage = ""
     
     private var charactersListModel = [
         CharacterModel(
@@ -73,6 +74,10 @@ extension CharactersListDefaultViewModel: CharactersListViewModel {
         let characterCellModel = charactersWithSectionModel.characters[index]
         characterModelSubject.send(characterCellModel)
     }
+    
+    func getNextPageCharactersModel() {
+        requestNextPageCharacters()
+    }
 }
 
 // MARK: - Private Extension -
@@ -88,9 +93,26 @@ private extension CharactersListDefaultViewModel {
         }
     }
     
+    func requestNextPageCharacters() {
+        if !nextPage.isEmpty {
+            let newEndPint = "\(endPoint)/?\(createQuery(with: nextPage))"
+            networkService.request(with: newEndPint) { [weak self] result in
+                switch result {
+                case .success(let data):
+                    self?.decodeCharacters(with: data)
+                case .failure(let error):
+                    print("error: \(error.localizedDescription)")
+                }
+            }
+        } else {
+            print("no nextPage")
+        }
+    }
+    
     func decodeCharacters(with data: Data) {
         do {
             let charactersWithInfoModel = try networkService.decodeJSONData(data: data) as CharactersWithInfoModel
+            nextPage = charactersWithInfoModel.info.next ?? ""
             charactersListModel = charactersWithInfoModel.results
             createCharactersWithSectionModel(with: charactersListModel)
         } catch {
@@ -126,5 +148,12 @@ private extension CharactersListDefaultViewModel {
         } else {
             return .uknown
         }
+    }
+    
+    func createQuery(with url: String) -> String {
+        guard let url = URL(string: url) else { return "" }
+        guard let queryString = url.query else { return "" }
+        print(queryString)
+        return queryString
     }
 }

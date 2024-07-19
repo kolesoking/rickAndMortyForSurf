@@ -25,6 +25,10 @@ final class CharactersListViewController: CommonViewController<CharactersListVie
         contentView.setupAction { [weak self] index in
             self?.viewModel.getCharacterModel(with: index)
         }
+        
+        contentView.setupUpdateCollectionAction { [weak self] in
+            self?.viewModel.getNextPageCharactersModel()
+        }
     }
     
     func configureBindings() {

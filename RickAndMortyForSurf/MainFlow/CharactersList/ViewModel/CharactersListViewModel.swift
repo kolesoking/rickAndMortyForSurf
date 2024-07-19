@@ -8,4 +8,5 @@ protocol CharactersListViewModel {
     func viewDidLoad()
     func getCharactersModel() async throws
     func getCharacterModel(with index: Int)
+    func getNextPageCharactersModel() 
 }
