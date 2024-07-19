@@ -47,6 +47,14 @@ final class CharactersListDefaultViewModel {
         ]
     )
     
+    private var episodesModel = [
+        EpisodesModel(
+            id: 0,
+            name: "",
+            url: ""
+        )
+    ]
+    
     init(networkService: NetworkService) {
         self.networkService = networkService
     }
@@ -63,6 +71,7 @@ extension CharactersListDefaultViewModel: CharactersListViewModel {
     }
     
     func viewDidLoad() {
+        requestEpisodes()
         requestCharacters()
     }
     
@@ -77,6 +86,7 @@ extension CharactersListDefaultViewModel: CharactersListViewModel {
     
     func getNextPageCharactersModel() {
         requestNextPageCharacters()
+        print(episodesModel)
     }
 }
 
@@ -87,6 +97,17 @@ private extension CharactersListDefaultViewModel {
             switch result {
             case .success(let data):
                 self?.decodeCharacters(with: data)
+            case .failure(let error):
+                print("error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func requestEpisodes() {
+        networkService.request(with: "episode/") { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.getAllEpisodes(with: data)
             case .failure(let error):
                 print("error: \(error.localizedDescription)")
             }
@@ -115,6 +136,35 @@ private extension CharactersListDefaultViewModel {
             nextPage = charactersWithInfoModel.info.next ?? ""
             charactersListModel = charactersWithInfoModel.results
             createCharactersWithSectionModel(with: charactersListModel)
+        } catch {
+            print("error: \(error.localizedDescription)")
+        }
+    }
+    
+    func getAllEpisodes(with data: Data) {
+        do {
+            let episodeInfoModel = try networkService.decodeJSONData(data: data) as EpisodesInfoModel
+            for index in 1...episodeInfoModel.info.pages {
+                networkService.request(with: "episode/?page=\(String(index))") { [weak self] result in
+                    switch result {
+                    case .success(let data):
+                        self?.decodeEpisode(with: data)
+                    case .failure(let error):
+                        print("error: \(error.localizedDescription)")
+                    }
+                }
+            }
+        } catch {
+            print("error: \(error.localizedDescription)")
+        }
+    }
+    
+    func decodeEpisode(with data: Data) {
+        do {
+            let episodesInfoModel = try networkService.decodeJSONData(data: data) as EpisodesInfoModel
+            episodesInfoModel.results.forEach { [weak self] in
+                self?.episodesModel.append($0)
+            }
         } catch {
             print("error: \(error.localizedDescription)")
         }

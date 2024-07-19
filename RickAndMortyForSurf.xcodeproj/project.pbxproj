@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71EAF59A2C4A6A9600322762 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EAF5992C4A6A9600322762 /* HeaderView.swift */; };
+		71EAF59C2C4A9AC200322762 /* EpisodesInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EAF59B2C4A9AC200322762 /* EpisodesInfoModel.swift */; };
 		71F70BD52C47ED6900B86999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BD42C47ED6900B86999 /* AppDelegate.swift */; };
 		71F70BD92C47ED6900B86999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F70BD82C47ED6900B86999 /* ViewController.swift */; };
 		71F70BDE2C47ED6B00B86999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F70BDD2C47ED6B00B86999 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		2A928F6E75EDC4036F21085C /* Pods-RickAndMortyForSurf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyForSurf.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyForSurf/Pods-RickAndMortyForSurf.debug.xcconfig"; sourceTree = "<group>"; };
 		60B2CDD9D0B81EA503D65C3D /* Pods_RickAndMortyForSurf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMortyForSurf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71EAF5992C4A6A9600322762 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		71EAF59B2C4A9AC200322762 /* EpisodesInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesInfoModel.swift; sourceTree = "<group>"; };
 		71F70BD12C47ED6900B86999 /* RickAndMortyForSurf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyForSurf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F70BD42C47ED6900B86999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71F70BD82C47ED6900B86999 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				71F70C082C48732200B86999 /* CharacterModel.swift */,
 				71F70C0A2C4875E300B86999 /* CharactersWithInfoModel.swift */,
 				71F70C1C2C494B9800B86999 /* CharacterCellModel.swift */,
+				71EAF59B2C4A9AC200322762 /* EpisodesInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				71F70C172C488B3500B86999 /* UIImageView +.swift in Sources */,
 				71F70C1D2C494B9800B86999 /* CharacterCellModel.swift in Sources */,
 				71F70C302C4979D200B86999 /* CharacterView.swift in Sources */,
+				71EAF59C2C4A9AC200322762 /* EpisodesInfoModel.swift in Sources */,
 				71F70BF82C47F60500B86999 /* CharactersListView.swift in Sources */,
 				71F70C2B2C49767200B86999 /* CharactersListBuilder.swift in Sources */,
 				71F70BFA2C47F68500B86999 /* CharactersListViewController.swift in Sources */,
