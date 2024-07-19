@@ -2,6 +2,7 @@ import SnapKit
 
 final class CharacterView: CommonView {
     private let headerView = HeaderView()
+    private let scrollView = UIScrollView()
     private let containerView = UIView()
     
     private let imageView = UIImageView()
@@ -17,6 +18,7 @@ final class CharacterView: CommonView {
     override func setupUI() {
         backgroundColor = .black
         setupHeadeView()
+        setupScrollView()
         setupContainerView()
         setupImageView()
         
@@ -57,6 +59,15 @@ private extension CharacterView {
         }
     }
     
+    func setupScrollView() {
+        addSubview(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.top.equalTo(headerView.snp.bottom)
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
     func setupContainerView() {
         containerView.backgroundColor = UIColor(
             red: 0x15/255,
@@ -66,10 +77,12 @@ private extension CharacterView {
         )
         containerView.layer.cornerRadius = 24
         
-        addSubview(containerView)
+        scrollView.addSubview(containerView)
         containerView.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(20)
-            $0.top.equalTo(headerView.snp.bottom).offset(8)
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview()
+            $0.width.equalTo(353)
         }
     }
     
@@ -115,7 +128,7 @@ private extension CharacterView {
         
         containerView.addSubview(speciesLabel)
         speciesLabel.snp.makeConstraints {
-            $0.left.right.equalToSuperview().inset(16)
+            $0.left.equalToSuperview().inset(16)
             $0.top.equalTo(lifeStatusView.snp.bottom).offset(24)
         }
     }
@@ -125,7 +138,7 @@ private extension CharacterView {
         
         containerView.addSubview(genderLabel)
         genderLabel.snp.makeConstraints {
-            $0.left.right.equalToSuperview().inset(16)
+            $0.left.equalToSuperview().inset(16)
             $0.top.equalTo(speciesLabel.snp.bottom).offset(12)
         }
     }
@@ -149,7 +162,7 @@ private extension CharacterView {
         
         containerView.addSubview(lastLocationLabel)
         lastLocationLabel.snp.makeConstraints {
-            $0.left.right.equalToSuperview().inset(16)
+            $0.left.equalToSuperview().inset(16)
             $0.top.equalTo(episodesLabel.snp.bottom).offset(12)
             $0.bottom.equalToSuperview().inset(16)
         }
